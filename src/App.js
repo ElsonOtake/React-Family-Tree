@@ -1,47 +1,18 @@
 import React from 'react';
-import TreeLeaf from './components/TreeLeaf';
-import './App.css';
-
-const state = {
-  tree: [
-    {
-      id: 1,
-      name: 'Elson Akio Otake',
-    },
-    {
-      id: 2,
-      name: 'Lilian Hiromi Job',
-    },
-    {
-      id: 3,
-      name: 'Tomoyo Job',
-    }
-  ]
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Details from './components/Details';
 
 function App() {
-  const onClick = () => {
-    return (
-      <div>
-        <TreeLeaf />
-      </div>
-    );
-  }
-
   return (
-    <>
-      <h1>Family tree</h1>
-      <form>
-        <label className='form-label'>Choose a name from the list</label>
-        <input className="form-control" list="names" name="name" id="FamilyTree" placeholder="Type to search..."/>
-        <datalist key={state.tree.id} id="names">
-          {state.tree.map(t => (
-            <option value={t.name} />
-          ))}
-        </datalist>
-        <input type="submit" onClick={onClick}/>
-      </form>
-    </>
+    <React.StrictMode>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details />} />
+        </Routes>
+      </Router>
+    </React.StrictMode>
   );
 }
 
