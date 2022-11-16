@@ -1,65 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTree } from '../redux/Home/Home';
-// import Option from './Option';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-// const state = {
-//   tree: [
-//     {
-//       id: 1,
-//       name: 'Elson Akio Otake',
-//     },
-//     {
-//       id: 2,
-//       name: 'Lilian Hiromi Job',
-//     },
-//     {
-//       id: 3,
-//       name: 'Tomoyo Job',
-//     }
-//   ]
-// }
-
 const Home = () => {
   const familyTreeData = useSelector((state) => state.treeReducer);
   const dispatch = useDispatch();
-
+  // dispatch(fetchTree());
   useEffect(() => {
     if (familyTreeData.length === 0) {
       dispatch(fetchTree());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [familyTreeData.length]);
-  const [id, setId] = useState('');
-  // let tree;
+  const [id, setId] = useState(1);
 
   const handleChange = (e) => {
     setId(e.target.value);
   }
-
-  // const filter = (data) => {
-  //   const response = [];
-  //   // console.log("data", data, "length", data.length, "data[0]", data[0], "data[0].name", data[0].name);
-  //   data.forEach((leaf) => {
-  //     response.push({
-  //       id: leaf.id,
-  //       name: leaf.name,
-  //     });
-  //   });
-  //   // console.log(response);
-  //   return response;
-  // };
-
-  // const requestURL = `http://localhost:3000/api/v1/users`;
-  // const request = new Request(requestURL);
-  // fetch(request)
-  //   .then((response) => response.json())
-  //   // .then ((response) => console.log(response.json()))
-  //   .then((data) => tree = filter(data));
-  //   // .then((data) => console.log(data));
-  //   // .then(console.log(tree));
 
   return (
     <>
