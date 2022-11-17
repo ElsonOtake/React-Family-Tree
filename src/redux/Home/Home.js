@@ -4,7 +4,7 @@ import axiosGetTree from './axiosGetTree';
 const FETCH = 'React-Family-Tree/home/FETCH';
 console.log("redux home");
 
-const treeReducer = (state = '', action) => {
+const treeReducer = (state = [], action) => {
   console.log("treeReducer", action.type);
   switch (action.type) {
     case FETCH:

@@ -15,7 +15,7 @@ const Home = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [familyTreeData.length]);
-  const [id, setId] = useState(1);
+  const [id, setId] = useState('');
 
   const handleChange = (e) => {
     setId(e.target.value);
