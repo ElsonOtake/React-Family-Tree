@@ -13,15 +13,23 @@ const Details = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
-      <h1>Hello from Tree Leaf ({id})</h1>
-      <p>Id: {leafData.id}</p>
-      <p>Name: {leafData.name}</p>
-      <p>Gender: {leafData.gender}</p>
-      <p>Description: {leafData.description}</p>
-      <p>Birth: {leafData.birth}</p>
-      <p>Death: {leafData.death}</p>
-      <p>Alive: {leafData.alive}</p>
+    <div className="card">
+      {/* <img src="..." className="card-img-top" alt="..."> */}
+      <div className="card-body">
+        <h5 className="card-title">{leafData.name}</h5>
+        <p className="card-text">{leafData.description}</p>
+      </div>
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item"><p>Id: {leafData.id}</p></li>
+        <li className="list-group-item"><p>Gender: {leafData.gender}</p></li>
+        <li className="list-group-item"><p>Birth: {leafData.birth}</p></li>
+        <li className="list-group-item"><p>Death: {leafData.death}</p></li>
+        <li className="list-group-item"><p>Alive: {leafData.alive}</p></li>
+      </ul>
+      {/* <div className="card-body">
+        <a href="#" className="card-link">Card link</a>
+        <a href="#" className="card-link">Another link</a>
+      </div> */}
     </div>
   )
 }
