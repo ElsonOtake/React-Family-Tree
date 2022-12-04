@@ -26,6 +26,24 @@ const Parents = ({data}) => {
   }
 };
 
+const Partners = ({data}) => {
+  console.log('Partners', data);
+  if (data.length > 0) {
+    return (<>
+              <h5>Partners</h5>
+              <ul>
+                {data.map((partner) => {
+                  console.log(partner.name);
+                  return (<li>
+                    <Individual id={partner.id} name={partner.name} gender={partner.gender} />
+                  </li>)})}
+              </ul>
+            </>);
+  } else {
+    return null;
+  }
+};
+
 const Children = ({data}) => {
   console.log('Children', data);
   if (data.length > 0) {
@@ -92,6 +110,7 @@ const Details = () => {
         {/* <li className="list-group-item"><p>Alive: {leafData.alive}</p></li> */}
       </ul>
       <Parents data={leafData.parents} />
+      <Partners data={leafData.partner} />
       <Children data={leafData.children} />
       <Siblings data={leafData.siblings} />
       {/* <div className="card-body">
