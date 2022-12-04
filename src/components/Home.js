@@ -25,7 +25,6 @@ const Home = () => {
   return (
     <>
       <h1>Family tree</h1>
-      <h2>{id}</h2>
       <Form>
         <Form.Group className="mb-3" controlId="formState">
           <Form.Label>Choose a name from the list</Form.Label>
