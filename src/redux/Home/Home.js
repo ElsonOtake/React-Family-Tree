@@ -2,10 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosGetTree from './axiosGetTree';
 
 const FETCH = 'React-Family-Tree/home/FETCH';
-console.log("redux home");
 
 const treeReducer = (state = [], action) => {
-  console.log("treeReducer", action.type);
   switch (action.type) {
     case FETCH:
       return action.payload;
@@ -24,7 +22,6 @@ export const fetchTree = createAsyncThunk(
           payload: data,
         }),
       );
-      console.log("res", res);
     return res;
   },
 );
