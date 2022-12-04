@@ -8,14 +8,15 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const familyTreeData = useSelector((state) => state.treeReducer);
   const dispatch = useDispatch();
-  // dispatch(fetchTree());
+
   useEffect(() => {
     if (familyTreeData.length === 0) {
       dispatch(fetchTree());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [familyTreeData.length]);
-  const [id, setId] = useState('');
+  
+  const [id, setId] = useState(1);
 
   const handleChange = (e) => {
     setId(e.target.value);
