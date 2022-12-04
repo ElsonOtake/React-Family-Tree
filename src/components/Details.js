@@ -44,6 +44,24 @@ const Children = ({data}) => {
   }
 };
 
+const Siblings = ({data}) => {
+  console.log('Siblings', data);
+  if (data.length > 0) {
+    return (<>
+              <h5>Siblings</h5>
+              <ul>
+                {data.map((sibling) => {
+                  console.log(sibling.name);
+                  return (<li>
+                    <Individual id={sibling.id} name={sibling.name} gender={sibling.gender} />
+                  </li>)})}
+              </ul>
+            </>);
+  } else {
+    return null;
+  }
+};
+
 const Details = () => {
   const leafData = useSelector((state) => state.leafReducer);
   const dispatch = useDispatch();
@@ -75,6 +93,7 @@ const Details = () => {
       </ul>
       <Parents data={leafData.parents} />
       <Children data={leafData.children} />
+      <Siblings data={leafData.siblings} />
       {/* <div className="card-body">
         <a href="#" className="card-link">Card link</a>
         <a href="#" className="card-link">Another link</a>
