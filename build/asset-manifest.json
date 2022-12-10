@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Family-Tree/static/css/main.14034d29.css",
+    "main.js": "/React-Family-Tree/static/js/main.00c6f14c.js",
+    "index.html": "/React-Family-Tree/index.html",
+    "main.14034d29.css.map": "/React-Family-Tree/static/css/main.14034d29.css.map",
+    "main.00c6f14c.js.map": "/React-Family-Tree/static/js/main.00c6f14c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14034d29.css",
+    "static/js/main.00c6f14c.js"
+  ]
+}
